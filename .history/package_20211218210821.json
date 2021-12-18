@@ -1,15 +1,14 @@
 {
-  "name": "systemltd-form",
+  "name": "nodejs-contact-form",
   "version": "1.0.0",
-  "description": "System Limited Form",
+  "description": "Contact form build with Bootstrap and Nodemailer",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test":"mocha 'test/**.test.js' -- --reporter mochawesome  --timeout 5000 --reporter-options reportFilename=SeliniumTestReport",
-    "unit": "mocha 'test/unit.js' -- --reporter mochawesome --timeout 10000 --reporter-options reportFilename=UnitTestReport"
+    "test": "mocha test -- --reporter mochawesome  --no-timeouts"
   },
-  "author": "System Limited",
-  "license": "None",
+  "author": "Rezky Firmansyah",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.2",
     "chromedriver": "^96.0.0",
