@@ -7,8 +7,10 @@ Contact form build with Bootstrap and Nodemailer
 ```
 $ git clone https://github.com/rezkyfm/nodejs-contact-form.git
 $ cd nodejs-contact-form
-$ npm install && npm start
-$ npm test
+$ npm install
+$ npm start (for index page)
+$ npm test  (For Selinium Testing)
+$ npm unit  (For Unit Testing)
 ```
 2. Open in browser
 ```
