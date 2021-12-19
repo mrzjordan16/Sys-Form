@@ -17,8 +17,8 @@ let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
 
 describe('Form Page', function() {
   before(function () {
-    // driver.get("http://localhost:80");
-    driver.get("https://devsecopsnodejs.azurewebsites.net/");
+    driver.get("http://localhost:80");
+    // driver.get("https://devsecopsnodejs.azurewebsites.net/");
   });
 
   it('Form Submit', async function() {
