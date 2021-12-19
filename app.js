@@ -67,7 +67,7 @@ app.post('/send', (req, res) => {
 });
 module.exports = app;
 if(!module.parent){
-    app.listen(80, () =>
+    app.listen(8080, () =>
       console.log(`Server Started!`),
     );
   }
