@@ -1,5 +1,5 @@
 # Node Contact Form
-Contact form build with Bootstrap and Nodemailer
+Contact form build with Bootstrap and NodeJS
 
 
 ### Installation
