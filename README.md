@@ -14,6 +14,6 @@ $ npm run unit  (For Unit Testing)
 ```
 2. Open in browser
 ```
-http://localhost:3000
+http://localhost:8080
 
 ```
