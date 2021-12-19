@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-12-19T14:58:01.421Z",
+    "end": "2021-12-19T14:58:02.114Z",
+    "duration": 693,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c8f21ee1-1c26-44fe-857f-5caa5ebeb359",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "665e9b08-2a41-4536-9962-e412564b1235",
+          "title": "Form Page",
+          "fullFile": "C:\\Users\\mneha\\Documents\\SystemLtd-Form\\SystemLtd-Form\\test\\app.test.js",
+          "file": "\\test\\app.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Form Page\"",
+              "fullTitle": "Form Page \"before all\" hook in \"Form Page\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver.get(\"http://localhost:3000\");",
+              "err": {},
+              "uuid": "d290431e-cb14-423f-b0c6-0fa27292d57f",
+              "parentUUID": "665e9b08-2a41-4536-9962-e412564b1235",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Form Page\"",
+              "fullTitle": "Form Page \"after all\" hook in \"Form Page\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver.quit();",
+              "err": {},
+              "uuid": "8046bf3f-21d3-495c-a6c3-88ea0050d470",
+              "parentUUID": "665e9b08-2a41-4536-9962-e412564b1235",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Form Submit",
+              "fullTitle": "Form Page Form Submit",
+              "timedOut": false,
+              "duration": 685,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys(\"SystemLtd\");\ndriver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys(\"IT@systemltd.com\");\ndriver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys(\"System Limited\");\n\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[4]/input')).click();\n\nvar message= await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/span'));\nassert.equal(await message.getText(),\"Form Submitted\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/button')).click();",
+              "err": {
+                "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"/html/body/div/div/div[1]/form/div[4]/input\"}\n  (Session info: headless chrome=96.0.4664.110)",
+                "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"/html/body/div/div/div[1]/form/div[4]/input\"}\n  (Session info: headless chrome=96.0.4664.110)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:539:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:647:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:573:28)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:735:17)\n    at async toWireValue (node_modules\\selenium-webdriver\\lib\\webdriver.js:140:15)\n    at async C:\\Users\\mneha\\Documents\\SystemLtd-Form\\SystemLtd-Form\\node_modules\\selenium-webdriver\\lib\\webdriver.js:190:16\n    at async forEachKey (node_modules\\selenium-webdriver\\lib\\webdriver.js:184:9)\n    at async convertKeys (node_modules\\selenium-webdriver\\lib\\webdriver.js:189:3)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:733:22)\n    at async Context.<anonymous> (test\\app.test.js:28:5)",
+                "diff": null
+              },
+              "uuid": "f7ea5ef1-2095-4383-b619-322c1f0a19d5",
+              "parentUUID": "665e9b08-2a41-4536-9962-e412564b1235",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f7ea5ef1-2095-4383-b619-322c1f0a19d5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 685,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 5000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "SeliniumTestReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "SeliniumTestReport"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

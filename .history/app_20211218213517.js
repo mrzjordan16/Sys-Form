@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const config = require('./config');
 var http = require('http');
@@ -14,11 +15,7 @@ function isEmpty(text){
 // Set Package
 const app = express();
 
-app.engine('handlebars', exphbs({
-    extname: "handlebars",
-    defaultLayout: false,
-    layoutsDir: "views/"
-  }));
+app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: false }))
