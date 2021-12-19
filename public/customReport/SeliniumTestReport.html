@@ -1,32 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-
-function DurationFunc(duration){
-   if(duration<1000){
-      return duration+"ms";
-   }else{
-      return (duration/1000).toFixed(2)+"s";
-   }
-}
-function ConvertJson(){
-    var dir=path.join(__dirname,'/public/report/'+process.argv[2]);
-    console.log("DIR:"+dir);
-    const json=require(dir);
-    var fileName=json.meta.mochawesome.options.reportFilename; 
-    var suites=json.stats.suites;
-    var Totalduration=DurationFunc(json.stats.duration);
-    var meta=json.meta;
-    var NoOfTest=json.stats.tests;
-    var NoOfPass=json.stats.passes;
-    var NoOfFail=json.stats.failures;
-    var PassPercentage=json.stats.passPercent;
-   var resultSuite=json.results[0].suites;
-    var html=`<html lang="en">
+<html lang="en">
     <head>
        <meta charset="utf-8">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="viewport" content="width=device-width, initial-scale=1">
-       <title>`+fileName+`</title>
+       <title>SeliniumTestReport</title>
        <style>
            /*! mochawesome-report-generator 6.0.1 | https://github.com/adamgruber/mochawesome-report-generator */
  :root{--screen-sm-min:768px;--screen-md-min:992px;--screen-lg-min:1200px;--grid-gutter-width:30px;--container-sm:calc(720px + var(--grid-gutter-width));--container-md:calc(940px + var(--grid-gutter-width));--container-lg:calc(1140px + var(--grid-gutter-width));--navbar-height:122px;--navbar-height-short:56px;--summary-height-stacked:82px;--statusbar-height-stacked:54px;--footer-height:60px;--default-transition-duration:0.2s;--default-transition-easing:ease;--gray-base:#000;--gray-darker-faded:color(var(--gray-darker) alpha(95%));--gray-darker:color(var(--gray-base) tint(13.5%));--gray-dark:color(var(--gray-base) tint(20%));--gray:color(var(--gray-base) tint(33.5%));--gray-light:color(var(--gray-base) tint(46.7%));--gray-medium:color(var(--gray-base) tint(73.5%));--gray-lighter:color(var(--gray-base) tint(93.5%));--gray-lighter-faded:color(var(--gray-lighter) alpha(95%));--gray-border:color(var(--gray-base) tint(80%));--grey50:#eceff1;--grey100:#f5f5f5;--grey300:#e0e0e0;--grey500:#9e9e9e;--grey700:#616161;--green100:#c8e6c9;--green200:#a5d6a7;--green300:#81c784;--green500:#4caf50;--green700:#388e3c;--red100:#ffcdd2;--red300:#e57373;--red500:#f44336;--red700:#d32f2f;--ltblue100:#b3e5fc;--ltblue300:#4fc3f7;--ltblue500:#03a9f4;--ltblue700:#0288d1;--black87:rgba(0,0,0,0.87);--black54:rgba(0,0,0,0.54);--black38:rgba(0,0,0,0.38);--bluegrey500:#607d8b;--bluegrey800:#37474f;--bluegrey900:#263238;--light-icon-active:#fff;--light-icon-inactive:hsla(0,0%,100%,0.5);--dark-icon-active:var(--black54);--dark-icon-inactive:var(--black38);--amber300:#ffd54f;--amber400:#ffca28;--amber500:#ffc107;--yellow700:#fbc02d;--yellow800:#f9a825;--brand-primary:color(#428bca shade(6.5%));--brand-success:#4caf50;--brand-info:#5bc0de;--brand-warning:#f0ad4e;--brand-danger:#d9534f;--text-color:var(--black87);--body-bg:#f2f2f2;--link-color:var(--brand-primary);--link-hover-color:color(var(--link-color) shade(15%));--list-group-border:#ddd;--font-family-sans-serif:"robotoregular","Helvetica Neue",Helvetica,Arial,sans-serif;--font-family-base:var(--font-family-sans-serif);--font-family-mono:"Menlo","Monaco","Consolas","Courier New",monospace;--font-size-base:14px;--line-height-base:1.429;--line-height-computed:20px;--headings-font-family:inherit;--headings-font-weight:400;--headings-line-height:1.1;--headings-color:inherit;--headings-small-color:var(--gray-light);--font-size-h1:36px;--font-size-h2:30px;--font-size-h3:24px;--font-size-h4:18px;--font-size-h5:var(--font-size-base);--font-size-h6:12px;--font-family-light:"robotolight";--font-family-regular:"robotoregular";--font-family-medium:"robotomedium";--link-transition:color 0.2s ease-out}.dropdown--trans-color---3ixtY{transition:color .2s ease-out;transition:var(--link-transition)}.dropdown--component---21Q9c{position:relative}.dropdown--toggle---3gdzr{white-space:nowrap}.dropdown--toggle-icon---1j9Ga:not(.dropdown--icon-only---3vq2I){margin-left:.5rem}.dropdown--list---8GPrA{padding:0;margin:0;list-style:none;text-align:left}.dropdown--list-main---3QZnQ{position:absolute;top:100%;z-index:1000;visibility:hidden;min-width:160px;overflow:auto}.dropdown--align-left---3-3Hu{left:0}.dropdown--align-right---2ZQx0{right:0}.dropdown--list-item-link---JRrOY,.dropdown--list-item-text---2COKZ{display:block;position:relative;white-space:nowrap;text-decoration:none}.dropdown--list-item-text---2COKZ{cursor:default}@-webkit-keyframes dropdown--in---FpwEb{0%{opacity:0}to{opacity:1}}@keyframes dropdown--in---FpwEb{0%{opacity:0}to{opacity:1}}@-webkit-keyframes dropdown--out---2HVe1{0%{opacity:1;visibility:visible}to{opacity:0}}@keyframes dropdown--out---2HVe1{0%{opacity:1;visibility:visible}to{opacity:0}}.dropdown--close---2LnDu{-webkit-animation:dropdown--out---2HVe1 .2s ease;animation:dropdown--out---2HVe1 .2s ease;-webkit-animation:dropdown--out---2HVe1 var(--default-transition-duration) var(--default-transition-easing);animation:dropdown--out---2HVe1 var(--default-transition-duration) var(--default-transition-easing);visibility:hidden}.dropdown--open---3bwiy{-webkit-animation:dropdown--in---FpwEb .2s ease;animation:dropdown--in---FpwEb .2s ease;-webkit-animation:dropdown--in---FpwEb var(--default-transition-duration) var(--default-transition-easing);animation:dropdown--in---FpwEb var(--default-transition-duration) var(--default-transition-easing);visibility:visible}
@@ -57,85 +34,52 @@ function ConvertJson(){
                 <div class="stats">
                    <div class="quick-summary--cnt---3s38x">
                       <ul class="quick-summary--list---2_80W">
-                         <li class="quick-summary--item---bfSQ0 duration" title="Duration"><i class="material-icons quick-summary--icon---TW1oG"></i><span class="">`+Totalduration+`</span></li>
-                         <li class="quick-summary--item---bfSQ0 suites" title="Suites"><i class="material-icons quick-summary--icon---TW1oG"></i>`+suites+`</li>
-                         <li class="quick-summary--item---bfSQ0 quick-summary--tests---2nNut" title="Tests"><i class="material-icons quick-summary--icon---TW1oG"></i>`+NoOfTest+`</li>
+                         <li class="quick-summary--item---bfSQ0 duration" title="Duration"><i class="material-icons quick-summary--icon---TW1oG"></i><span class="">6.29s</span></li>
+                         <li class="quick-summary--item---bfSQ0 suites" title="Suites"><i class="material-icons quick-summary--icon---TW1oG"></i>1</li>
+                         <li class="quick-summary--item---bfSQ0 quick-summary--tests---2nNut" title="Tests"><i class="material-icons quick-summary--icon---TW1oG"></i>1</li>
                       </ul>
                       <ul class="quick-summary--list---2_80W">
-                         <li class="quick-summary--item---bfSQ0 quick-summary--passes---3IjYH" title="Passed"><button type="button"><i class="material-icons quick-summary--icon---TW1oG quick-summary--circle-icon---1HDS7"></i>`+NoOfPass+`</button></li>
-                         <li class="quick-summary--item---bfSQ0 quick-summary--failures---14s29" title="Failed"><button type="button"><i class="material-icons quick-summary--icon---TW1oG quick-summary--circle-icon---1HDS7"></i>`+NoOfFail+`</button></li>
+                         <li class="quick-summary--item---bfSQ0 quick-summary--passes---3IjYH" title="Passed"><button type="button"><i class="material-icons quick-summary--icon---TW1oG quick-summary--circle-icon---1HDS7"></i>1</button></li>
+                         <li class="quick-summary--item---bfSQ0 quick-summary--failures---14s29" title="Failed"><button type="button"><i class="material-icons quick-summary--icon---TW1oG quick-summary--circle-icon---1HDS7"></i>0</button></li>
                       </ul>
                    </div>
                 </div>
-                <div class="navbar--pct-bar---3EwW-"><span class="navbar--pct-bar-segment---3T0_o navbar--pass---2oR-w" title="`+PassPercentage+`% Passing" style="width: `+PassPercentage+`%;"></span><span class="navbar--pct-bar-segment---3T0_o navbar--fail---3mN80" title="`+(100-PassPercentage)+`% Failing" style="width: `+(100-PassPercentage)+`%;"></span></div>
+                <div class="navbar--pct-bar---3EwW-"><span class="navbar--pct-bar-segment---3T0_o navbar--pass---2oR-w" title="100% Passing" style="width: 100%;"></span><span class="navbar--pct-bar-segment---3T0_o navbar--fail---3mN80" title="0% Failing" style="width: 0%;"></span></div>
              </div>
-`;
-   for(i=0;i<resultSuite.length;i++){
-      value=resultSuite[i];
-      html+=` <!--sample-->
+ <!--sample-->
       <div id="details" class="details container">
          <ul class="suite--list---3WtMK suite--list-main---3KCXR">
             <li id="605043fe-1f67-46d4-aea1-665bf330e91d">
                <section class="suite--component---22Vxk suite--no-suites---2PQFQ has-tests has-passed has-failed">
                   <header class="suite--header---TddSn">
                      <button aria-expanded="true" type="button" class="suite--header-btn---25qLz">
-                        <h3 class="suite--title---3T6OR"><span>`+value.title+`</span></h3>
-                        <h6 class="suite--filename---1u8oo">`+value.file+`</h6>
+                        <h3 class="suite--title---3T6OR"><span>Form Page</span></h3>
+                        <h6 class="suite--filename---1u8oo">\test\app.test.js</h6>
                         <ul class="suite-summary--component---cFAkx">
-                           <li class="suite-summary--summary-item---JHYFN suite-summary--duration---AzGUQ" title="Duration"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i><span class="">`+(DurationFunc(value.duration))+`</span></li>
-                           <li class="suite-summary--summary-item---JHYFN suite-summary--tests---3Zhct" title="Tests"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>`+(value.passes.length+value.failures.length)+`</li>
-                           <li class="suite-summary--summary-item---JHYFN suite-summary--passed---24BnC" title="Passed"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>`+value.passes.length+`</li>
-                           <li class="suite-summary--summary-item---JHYFN suite-summary--failed---205C4" title="Failed"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>`+value.failures.length+`</li>
+                           <li class="suite-summary--summary-item---JHYFN suite-summary--duration---AzGUQ" title="Duration"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i><span class="">6.29s</span></li>
+                           <li class="suite-summary--summary-item---JHYFN suite-summary--tests---3Zhct" title="Tests"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>1</li>
+                           <li class="suite-summary--summary-item---JHYFN suite-summary--passed---24BnC" title="Passed"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>1</li>
+                           <li class="suite-summary--summary-item---JHYFN suite-summary--failed---205C4" title="Failed"><i class="material-icons md-18 suite-summary--icon---3rZ6G"></i>0</li>
                         </ul>
                      </button>
                   </header><div class="suite--body---1itCO">
-                  <ul class="test--list---24Hjy">`;
-                  
-                  for(j=0;j<value.tests.length;j++){
-                     testValue=value.tests[j];
-                  if(testValue.pass){   
-                     temp=`
-                        <li id="`+testValue.uuid+`" class="test--component---1mwsi test--passed---38wAs">
+                  <ul class="test--list---24Hjy">
+                        <li id="6f2c24ca-3f6d-4a76-87d3-1a85f9e53821" class="test--component---1mwsi test--passed---38wAs">
                            <header>
                               <button aria-expanded="false" type="button" class="test--header-btn---mI0Oy">
                                  <i class="material-icons md-18 test--icon---2jgH_ test--pass---C1Mk7"></i>
-                                 <h4 class="test--title---4c0rg" title="`+testValue.title+`">`+testValue.title+`</h4>
-                                 <div class="test--info---1UQNw"><span class="test--duration---2tVp5">`+(DurationFunc(testValue.duration))+`</span><i class="material-icons md-18`;
-                                 if(testValue.speed==="slow"){
-                                    temp+=`.test--duration-icon---2KnOU.test--slow---MQOnF`;
-                                 }else{
-                                    temp+=` fast`;
-                                 }
-                                 temp+=`"></i></div>
+                                 <h4 class="test--title---4c0rg" title="Form Submit">Form Submit</h4>
+                                 <div class="test--info---1UQNw"><span class="test--duration---2tVp5">6.29s</span><i class="material-icons md-18.test--duration-icon---2KnOU.test--slow---MQOnF"></i></div>
                                  <div class="test">
                                  </div>
                                  </button>
                            </header>
-                        </li>`;
-                  }else{
-                     temp=`<li id="`+testValue.uuid+`" class="test--component---1mwsi test--failed---2PZhW">
-                           <header>
-                              <button aria-expanded="false" type="button" class="test--header-btn---mI0Oy">
-                                 <i class="material-icons md-18 test--icon---2jgH_ test--fail---3u2w0"></i>
-                                 <h4 class="test--title---4c0rg" title="`+testValue.title+`">`+testValue.title+`</h4>
-                                 <div class="test--info---1UQNw"><span class="test--duration---2tVp5">`+(DurationFunc(testValue.duration))+`</span><i class="material-icons md-18 test--duration-icon---2KnOU"></i></div>
-                                 <p class="test--error-message---3Grn0">`+testValue.err.estack+`
-                                 </p>
-                              </button>
-                           </header>
-                        </li>
-                    `;
-                  }
-                  html+=temp;
-               }
-               html+=` </ul>
+                        </li> </ul>
                </div></section>
             </li>
          </ul>
       </div>
-      <!---------------------------------------------------------------->`;
-   }
-   html+=`<footer class="footer--component---1WcTR">
+      <!----------------------------------------------------------------><footer class="footer--component---1WcTR">
              </footer>
              <div class="nav-menu--wrap---39S_b">
                 <div class="nav-menu--overlay---k2Lwz"></div>
@@ -173,18 +117,4 @@ function ConvertJson(){
           </main>
        </div>
     </body>
- </html>`;
- dir=path.join(__dirname, '/public/customReport/');
- if (!fs.existsSync(dir)) {
-   fs.mkdir(dir, (err) => {
-      if (err) {
-          return console.error(err);
-      }
-      // console.log('Directory created successfully!');
-   });
- }
- fs.writeFileSync("./public/customReport/"+fileName+".html", html);
- console.log("[CustomReport] Custom HTML Report saved to "+dir+fileName+".html");
-}
-
-ConvertJson();
+ </html>
