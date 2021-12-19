@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2021-12-19T14:57:50.527Z",
-    "end": "2021-12-19T14:57:50.534Z",
-    "duration": 7,
+    "failures": 0,
+    "start": "2021-12-19T15:32:08.875Z",
+    "end": "2021-12-19T15:32:08.880Z",
+    "duration": 5,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "37135e8f-088d-4382-82bf-2cf1df6c687b",
+      "uuid": "be84e91d-d7c2-4012-ab94-21fa034686c8",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7185b185-ce06-4dcb-b9ac-f89517a843c1",
+          "uuid": "645176a0-8921-4c30-ae1b-a89fbb5fefed",
           "title": "Unit Testing",
           "fullFile": "C:\\Users\\mneha\\Documents\\SystemLtd-Form\\SystemLtd-Form\\test\\unit.js",
           "file": "\\test\\unit.js",
@@ -38,33 +38,29 @@
               "title": "Check Validate Email",
               "fullTitle": "Unit Testing Check Validate Email",
               "timedOut": false,
-              "duration": 2,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "assert.equal(EmailValidation(\"DevOps@systemltd.com\"),true);\nassert.equal(EmailValidation(\"IT@systemltd.com\"),true);\nassert.equal(EmailValidation(\"systemltd.com\"),true);",
-              "err": {
-                "message": "AssertionError: expected false to equal true",
-                "estack": "AssertionError: expected false to equal true\n    at Context.<anonymous> (test\\unit.js:8:14)\n    at processImmediate (internal/timers.js:461:21)",
-                "diff": "- false\n+ true\n"
-              },
-              "uuid": "2ecc8e78-5dab-4073-8b15-1b2be50247c4",
-              "parentUUID": "7185b185-ce06-4dcb-b9ac-f89517a843c1",
+              "code": "assert.equal(EmailValidation(\"DevOps@systemltd.com\"),true);\nassert.equal(EmailValidation(\"IT@systemltd.com\"),true);\n// assert.equal(EmailValidation(\"systemltd.com\"),true);",
+              "err": {},
+              "uuid": "c98921e9-e38c-4b05-af69-1b64464c0877",
+              "parentUUID": "645176a0-8921-4c30-ae1b-a89fbb5fefed",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "2ecc8e78-5dab-4073-8b15-1b2be50247c4"
+          "passes": [
+            "c98921e9-e38c-4b05-af69-1b64464c0877"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2,
+          "duration": 1,
           "root": false,
           "rootEmpty": false,
           "_timeout": 10000

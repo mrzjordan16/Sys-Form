@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Server Start Notification
-// app.listen(3000, () => console.log("Server Started..."));
+app.listen(3000, () => console.log("Server Started..."));
 
 // Set Static Folder Path
 app.use('/public', express.static(path.join(__dirname, 'public')));
@@ -65,8 +65,3 @@ app.post('/send', (req, res) => {
   
 });
 module.exports = app;
-if(!module.parent){
-    app.listen(80, () =>
-      console.log(`Server Started!`),
-    );
-  }

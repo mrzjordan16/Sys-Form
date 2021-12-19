@@ -13,12 +13,12 @@ const height = 480;
 let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
   new chrome.Options().headless().windowSize({width, height})).build();
 
-// let driver=new webdriver.Builder().forBrowser('chrome').build();
+
 
 describe('Form Page', function() {
   before(function () {
-    driver.get("http://localhost:80");
-    // driver.get("https://devsecopsnodejs.azurewebsites.net/");
+//     driver.get("http://localhost:3000");
+    driver.get("https://devsecopsnodejs.azurewebsites.net/");
   });
 
   it('Form Submit', async function() {
