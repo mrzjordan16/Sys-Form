@@ -13,13 +13,13 @@ function isEmpty(text){
 
 // Set Package
 const app = express();
-app.use(express.static('public'));
 
-app.engine('handlebars', exphbs({
-    extname: "handlebars",
-    defaultLayout: false,
-    layoutsDir: "views/"
-  }));
+// app.engine('handlebars', exphbs({
+//     extname: "handlebars",
+//     defaultLayout: false,
+//     layoutsDir: "views/"
+//   }));
+app.engine('handlebars',exphbs());
 app.set('view engine', 'handlebars');
 app.disable("x-powered-by");
 app.use(bodyParser.urlencoded({ extended: false }))
