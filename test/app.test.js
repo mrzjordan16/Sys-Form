@@ -17,7 +17,8 @@ let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
 
 describe('Form Page', function() {
   before(function () {
-    driver.get("http://localhost:3000");
+//     driver.get("http://localhost:3000");
+    driver.get("https://devsecopsnodejs.azurewebsites.net/");
   });
 
   it('Form Submit', async function() {
