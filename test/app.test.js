@@ -23,7 +23,11 @@ describe('Form Page', function() {
     
   });
   it('Demo',async function(){
-      assert.equal("1","1");
+    driver.findElement(webdriver.By.xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')).sendKeys("SystemLtd");
+    await driver.findElement(webdriver.By.xpath('/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]')).click();
+    var message=await driver.findElement(webdriver.By.xpath('/html/body/div[7]/div/div[10]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div/div/div/div[1]/a/h3'));
+//     assert.equal("1","1");
+    assert.equal(await message.getText(),"Systems Limited: Enabling a digital tomorrow");
   });
 //   it('Form Submit', async function() {
 //     driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys("SystemLtd");
