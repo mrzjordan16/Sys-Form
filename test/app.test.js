@@ -22,7 +22,9 @@ describe('Form Page', function() {
 //     driver.get("https://devsecopsnodejs.azurewebsites.net/");
     
   });
-  
+  it('Demo',async function(){
+      assert.equal("1","1");
+  });
 //   it('Form Submit', async function() {
 //     driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys("SystemLtd");
 //     driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys("IT@systemltd.com");
