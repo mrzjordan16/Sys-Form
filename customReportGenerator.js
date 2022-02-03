@@ -183,8 +183,8 @@ function ConvertJson(){
       // console.log('Directory created successfully!');
    });
  }
-//  fs.writeFileSync(dir+fileName+".html", html);
-   fs.writeFileSync("text.txt","cool");
+ fs.writeFileSync('/public/customReport/'+fileName+".html", html);
+//    fs.writeFileSync("text.txt","cool");
  console.log("[CustomReport] Custom HTML Report saved to "+dir+fileName+".html");
 }
 
