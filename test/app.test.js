@@ -11,8 +11,8 @@ const height = 480;
 
 
 let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
-  new chrome.Options().headless().windowSize({width, height})).build();
-
+  new chrome.Options().headless().windowSize({width, height})).build()
+);
 // let driver=new webdriver.Builder().forBrowser('chrome').build();
 
 describe('Form Page', function() {
