@@ -174,18 +174,18 @@ function ConvertJson(){
        </div>
     </body>
  </html>`;
- dir=path.join(__dirname, '/public/customReport/');
- if (!fs.existsSync(dir)) {
-   fs.mkdir(dir, (err) => {
-      if (err) {
-          return console.error(err);
-      }
-      // console.log('Directory created successfully!');
-   });
- }
- fs.writeFileSync('/public/customReport/'+fileName+".html", html);
+//  dir=path.join(__dirname, '/public/customReport/');
+//  if (!fs.existsSync(dir)) {
+//    fs.mkdir(dir, (err) => {
+//       if (err) {
+//           return console.error(err);
+//       }
+//       // console.log('Directory created successfully!');
+//    });
+//  }
+ fs.writeFileSync(fileName+".html", html);
 //    fs.writeFileSync("text.txt","cool");
- console.log("[CustomReport] Custom HTML Report saved to "+dir+fileName+".html");
+ console.log("[CustomReport] Custom HTML Report saved to "+fileName+".html");
 }
 
 ConvertJson();
