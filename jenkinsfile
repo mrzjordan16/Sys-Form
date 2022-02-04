@@ -8,17 +8,17 @@ pipeline {
       }
       stage("build"){
           steps {
-            sh echo 'NPM BUILD';
+            sh 'echo NPM BUILD'
           }
       }
       stage("test"){
           steps {
-            sh echo 'NPM TEST';
+            sh 'echo NPM TEST'
           }
       }
       stage("deploy"){
           steps {
-            sh echo 'NPM DEPLOY';
+            sh 'echo NPM DEPLOY'
           }
       }
     }
