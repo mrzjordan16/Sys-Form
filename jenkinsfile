@@ -21,7 +21,8 @@ pipeline {
       stage("deploy"){
           steps {
             sh 'echo NPM DEPLOY'
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './', reportFiles: 'UnitTestReport.html', reportName: 'Unit Test Report', reportTitles: 'Unit Test Report'])      
-          }
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './', reportFiles: 'UnitTestReport.html', reportName: 'Unit Test Report', reportTitles: 'Unit Test Report'])
+           }
+        }
      }
 }
