@@ -9,12 +9,12 @@ pipeline {
       }
       stage("build"){
           steps {
-            sh 'echo NPM BUILD'
+            sh 'npm install'
           }
       }
       stage("test"){
           steps {
-            sh 'echo NPM TEST'
+            sh 'npm run test'
           }
       }
       stage("deploy"){
