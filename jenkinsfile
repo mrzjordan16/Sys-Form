@@ -21,7 +21,7 @@ pipeline {
       stage("deploy"){
           steps {
                 sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 pwd;ls -lat;'
+                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 pwd && ls -lat'
                 }
            }
         }
