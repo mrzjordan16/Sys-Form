@@ -35,7 +35,9 @@ pipeline {
                     reuseNode true
                 }
             }
-            sh 'ip a;npm run test;'
+            steps{
+                sh 'ip a;npm run test;'
+            }
          }
       }        
      post{
