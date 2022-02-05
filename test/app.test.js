@@ -11,7 +11,7 @@ const height = 480;
 
 
 let driver=new webdriver.Builder().forBrowser('chrome').usingServer('http://20.203.15.240:4444/wd/hub').setChromeOptions(
-  new chrome.Options()).headless().windowSize({width, height}).build();
+  new chrome.Options().headless().windowSize({width, height})).build();
 // let driver=new webdriver.Builder().forBrowser('chrome').build();
 // var service = new chrome.ServiceBuilder(chromedriver.path).build();
 // chrome.setDefaultService(service);
