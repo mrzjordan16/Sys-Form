@@ -21,7 +21,7 @@ var driver = new webdriver.Builder()
 
 describe('Form Page', function() {
   before(function () {
-    driver.get("http://localhost:3000");
+    driver.get("http://182.176.114.79:3000");
 //     driver.get("https://devsecopsnodejs.azurewebsites.net/");
     
   });
