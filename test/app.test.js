@@ -10,8 +10,8 @@ const width = 640;
 const height = 480;
 
 
-// let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
-//   new chrome.Options().headless()).windowSize({width, height}).build();
+let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
+  new chrome.Options().headless()).windowSize({width, height}).build();
 // let driver=new webdriver.Builder().forBrowser('chrome').build();
 var service = new chrome.ServiceBuilder(chromedriver.path).build();
 chrome.setDefaultService(service);
@@ -21,7 +21,7 @@ var driver = new webdriver.Builder()
 
 describe('Form Page', function() {
   before(function () {
-    driver.get("http://localhost:8082");
+    driver.get("http://localhost:3000");
 //     driver.get("https://devsecopsnodejs.azurewebsites.net/");
     
   });
