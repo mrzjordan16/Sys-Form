@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         nodejs "nodejs-jenkins"
-        docker "docker-jenkins"
+        dockerTool "docker-jenkins"
     }
      triggers {
         issueCommentTrigger('.*test this please.*')
