@@ -26,9 +26,18 @@ pipeline {
                 sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
                     sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 "pwd; cd ~/SystemLtd-Form;rm -rf node_modules;git pull origin qa;npm install --only=production;npm install pm2@latest -g;pm2 restart app.js;"'
                 }
-                sh 'npm run test'
+                
            }
         }
+     }
+     stage ("Selenium-Test"){
+        agent{
+            docker {
+                    image 'selenium/standalone-chrome:4.1.2-20220131'
+                    reuseNode true
+            }
+            sh 'ip a;npm run test;'
+        } 
      }
      post{
         success{
