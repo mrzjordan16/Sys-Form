@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "nodejs-jenkins"}
      triggers {
-        cron('* * * 1-5')
+        issueCommentTrigger('.*test this please.*')
     }
     stages{
       stage("SCM"){
