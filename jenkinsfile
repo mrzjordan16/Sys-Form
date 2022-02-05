@@ -27,11 +27,19 @@ pipeline {
       stage("deploy"){
           steps {
                 sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 "pwd; cd ~/SystemLtd-Form;rm -rf node_modules;git pull origin qa;npm install --only=production;npm install pm2@latest -g;pm2 restart app.js;"'
+                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 "pwd; cd ~/SystemLtd-Form;rm -rf node_modules;git pull origin qa;npm install --only=production;pm2 restart app.js;"'
                 }  
            }
       }
      stage ("Selenium-Test"){
+            agent{
+                docker {
+                    alwaysPull true
+                    image 'selenium/standalone-chrome'
+                    args '-d -p 4444:4444 -p 7900:7900 --shm-size="2g'
+                    reuseNode true
+                }
+            }
             steps{
                 sh 'docker --version'
             }
