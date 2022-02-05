@@ -32,14 +32,6 @@ pipeline {
            }
       }
      stage ("Selenium-Test"){
-            agent{
-                docker {
-                    alwaysPull true
-                    image 'selenium/standalone-chrome'
-                    args '-d -p 4444:4444 -p 7900:7900 --shm-size="2g'
-                    reuseNode true
-                }
-            }
             steps{
                 sh 'docker --version'
             }
