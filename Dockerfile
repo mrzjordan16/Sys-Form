@@ -2,7 +2,7 @@ FROM ubuntu:latest
 WORKDIR /app
 EXPOSE 3000 
 
-RUN "apt install sudo"
+RUN "apt-get update && apt-get install sudo -y"
 #WGET
 #SUDO
 
