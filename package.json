@@ -15,7 +15,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^5.0.0",
-    "helmet": "^4.6.0",
+    "helmet": "^4.6.0"
   },
   "devDependencies": {
     "selenium-webdriver": "^4.1.0",
@@ -24,6 +24,6 @@
     "mochawesome": "^7.0.1",
     "request": "^2.88.2",
     "zombie": "^6.1.4",
-    "chromedriver": "^97.0.4",
+    "chromedriver": "^97.0.4"
   }
 }
