@@ -2,10 +2,11 @@ FROM ubuntu:latest
 WORKDIR /app
 EXPOSE 3000 
 
-RUN  apt-get update && apt-get install -y sudo && sudo apt-get install curl wget -y 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash  
-RUN sudo apt-get install nodejs -y 
-RUN node -v && npm -v
+RUN  apt-get update && apt-get install -y sudo && sudo apt-get install curl wget -y \
+&& curl -fsSL https://deb.nodesource.com/setup_16.x | bash  \
+&& sudo apt-get install nodejs -y && node -v && npm -v \
+&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 
 
 
@@ -16,9 +17,9 @@ RUN node -v && npm -v
 
 
 
-#RUN "npm install"
 
 
-#CMD "npm run start;npm run test"
+
+CMD npm install
 
 
