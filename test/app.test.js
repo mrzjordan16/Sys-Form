@@ -10,16 +10,14 @@ const width = 640;
 const height = 480;
 
 
-// let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
-//   new chrome.Options().headless().windowSize({width, height})).build();
-
+let driver=new webdriver.Builder().forBrowser('chrome').usingServer('http://20.203.15.240:4444/wd/hub').setChromeOptions(
+  new chrome.Options().headless().windowSize({width, height})).build();
 // let driver=new webdriver.Builder().forBrowser('chrome').build();
-var service = new chrome.ServiceBuilder(chromedriver.path).build();
-chrome.setDefaultService(service);
-
-var driver = new webdriver.Builder()
-.withCapabilities(webdriver.Capabilities.chrome())
-.build();
+// var service = new chrome.ServiceBuilder(chromedriver.path).build();
+// chrome.setDefaultService(service);
+// var driver = new webdriver.Builder()
+// .withCapabilities(webdriver.Capabilities.chrome())
+// .build();
 
 describe('Form Page', function() {
   before(function () {
