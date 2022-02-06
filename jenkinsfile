@@ -33,7 +33,12 @@ pipeline {
       }
      stage ("Selenium-Test"){
             steps{
-                sh 'npm run test'
+                sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
+                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 "npm run test;"'
+                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 "cat SeliniumTestReport.html">SeliniumTestReport.html'
+                    sh 'cat SeliniumTestReport.html'
+                } 
+                
             }
         }
     }        
