@@ -34,9 +34,8 @@ pipeline {
      stage ("Selenium-Test"){
             steps{
                 sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 " cd ~/SystemLtd-Form;rm -rf node_modules;npm install;npm run test;rm -rf node_modules;npm install --only=production"'
+                    sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 " cd ~/SystemLtd-Form;rm -rf node_modules;rm -f SeliniumTestReport.html;npm install;npm run test;rm -rf node_modules;npm install --only=production"'
                     sh 'ssh -o StrictHostKeyChecking=no -l jenkins 182.176.114.79 " cd ~/SystemLtd-Form;cat SeliniumTestReport.html">SeliniumTestReport.html'
-                    sh 'cat SeliniumTestReport.html'
                 } 
                 
             }
@@ -45,6 +44,7 @@ pipeline {
      post{
         success{
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './', reportFiles: 'UnitTestReport.html', reportName: 'Unit Test Report', reportTitles: 'Unit Test Report'])
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './', reportFiles: 'SeliniumTestReport.html', reportName: 'Selinium Test Report', reportTitles: 'Selinium Test Report'])
         }
      }
 }
