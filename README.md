@@ -29,7 +29,9 @@ docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome
 
 
 SELENIUM TEST
+```
 cd SystemLtd-Form
 docker-compose up -d
 docker run -v $(pwd):/app systemltd-form_test
 cat SeliniumTestReport.html
+```
