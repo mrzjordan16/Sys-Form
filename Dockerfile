@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-
+COPY . ./app
 WORKDIR /app
 
 EXPOSE 3000 
@@ -20,7 +20,7 @@ RUN rm google-chrome-stable_current_amd64.deb
 
 RUN npm install -g pm2 mocha;
 RUN npm install chromedriver;
-COPY . ./app
+
 
 #NODEJS
 #NPM
