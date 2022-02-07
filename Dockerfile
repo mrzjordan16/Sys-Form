@@ -29,6 +29,6 @@ RUN rm google-chrome-stable_current_amd64.deb
 
 
 
-CMD ls -lat
+CMD ls -lat;npm run pm_start;npm run test;
 
 
