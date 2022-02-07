@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "pm_start":"pm2 start app.js",
+    "pm_start":"pm2 start app.js ",
+    "pm_start_no_daemon":"pm2 start app.js --no-daemon",
     "test": "mocha 'test/**.test.js' -- --reporter mochawesome  --no-timeout --reporter-options reportDir=public/report   --reporter-options reportFilename=SeliniumTestReport && node customReportGenerator.js SeliniumTestReport.json",
     "unit": "mocha 'test/unit.js' -- --reporter mochawesome --timeout 10000 --reporter-options reportDir=public/report --reporter-options reportFilename=UnitTestReport && node customReportGenerator.js UnitTestReport.json"
   },
