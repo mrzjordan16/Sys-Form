@@ -23,16 +23,16 @@ let driver=new webdriver.Builder().forBrowser('chrome').usingServer("http://loca
 // .build();
 
 describe('Form Page', function() {
-  before(function () {
-    driver.get("http://182.176.114.79:3000");
+  before(async function () {
+    await driver.get("http://182.176.114.79:3000");
 //     driver.get("https://devsecopsnodejs.azurewebsites.net/");
     
   });
 
   it('Form Submit', async function() {
-    driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys("SystemLtd");
-    driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys("IT@systemltd.com");
-    driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys("System Limited");
+    await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys("SystemLtd");
+    await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys("IT@systemltd.com");
+    await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys("System Limited");
     
     await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[4]/input')).click();
     
@@ -42,8 +42,8 @@ describe('Form Page', function() {
     
   });
 
-  after(() => {
-    driver.quit();
+  after(async () => {
+    await driver.quit();
   });
 });
 
