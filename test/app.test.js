@@ -13,7 +13,7 @@ const height = 480;
 // let driver=new webdriver.Builder().forBrowser('chrome').setChromeOptions(
 //   new chrome.Options().addArguments('--disable-dev-shm-usage').addArguments('--headless').headless().windowSize({width, height})).build();
 
-let driver=new webdriver.Builder().forBrowser('chrome').usingServer("http://localhost:4444/wd/hub").setChromeOptions(
+let driver=new webdriver.Builder().forBrowser('chrome').usingServer("http://182.176.114.79:4444/wd/hub").setChromeOptions(
   new chrome.Options().addArguments('--disable-dev-shm-usage').headless().windowSize({width, height})).build();
 // let driver=new webdriver.Builder().forBrowser('chrome').build();
 // var service = new chrome.ServiceBuilder(chromedriver.path).build();
