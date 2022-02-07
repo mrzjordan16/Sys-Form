@@ -3,7 +3,7 @@ services:
   node:
     build: ./TestDock/NodeApp/
     volumes:
-      - '$(pwd):/app'
+      - $(pwd):/app
     ports:
       - '3000:3000'
   chrome:
