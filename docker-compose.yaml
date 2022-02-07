@@ -1,0 +1,15 @@
+version: "3"
+services:
+   node:
+     build: ./TestDock/NodeApp/
+     volumes:
+       - "$(pwd):/app"
+     ports: 
+       -"3000:3000"	
+   chrome:
+     image: selenium/node-chrome:latest
+     shm_size: 2gb
+     ports:
+       - "4444:4444"
+   test:
+     build: ./TestDock/TestApp/

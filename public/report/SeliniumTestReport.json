@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-07T19:12:48.058Z",
+    "end": "2022-02-07T19:12:48.570Z",
+    "duration": 512,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "67665201-89af-483c-ac12-30095ab357d7",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+          "title": "Form Page",
+          "fullFile": "/app/test/app.test.js",
+          "file": "/test/app.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook for \"Form Submit\"",
+              "fullTitle": "Form Page \"before all\" hook for \"Form Submit\"",
+              "timedOut": false,
+              "duration": 405,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"http://182.176.114.79:3000\");\n//     driver.get(\"https://devsecopsnodejs.azurewebsites.net/\");",
+              "err": {
+                "message": "WebDriverError: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: headless chrome=97.0.4692.99)",
+                "estack": "WebDriverError: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: headless chrome=97.0.4692.99)\n    at Object.throwDecodedError (node_modules/selenium-webdriver/lib/error.js:539:15)\n    at parseHttpResponse (node_modules/selenium-webdriver/lib/http.js:647:13)\n    at Executor.execute (node_modules/selenium-webdriver/lib/http.js:573:28)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async thenableWebDriverProxy.execute (node_modules/selenium-webdriver/lib/webdriver.js:735:17)\n    at async Context.<anonymous> (test/app.test.js:27:5)",
+                "diff": null
+              },
+              "uuid": "9ce7ca77-12f7-4c28-b007-048538a0f681",
+              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Form Page\"",
+              "fullTitle": "Form Page \"after all\" hook in \"Form Page\"",
+              "timedOut": false,
+              "duration": 84,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "0745865e-5df1-4492-89df-ba0a79e08603",
+              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Form Submit",
+              "fullTitle": "Form Page Form Submit",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys(\"SystemLtd\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys(\"IT@systemltd.com\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys(\"System Limited\");\n\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[4]/input')).click();\n\nvar message= await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/span'));\nassert.equal(await message.getText(),\"Form Submitted\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/button')).click();",
+              "err": {},
+              "uuid": "5395ebc2-7a4f-4a6d-bc7f-c2f39b8c5465",
+              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "5395ebc2-7a4f-4a6d-bc7f-c2f39b8c5465"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "SeliniumTestReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "public/report",
+        "reportFilename": "SeliniumTestReport"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
