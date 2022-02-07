@@ -32,6 +32,6 @@ RUN npm install -g pm2 mocha;
 
 
 
-CMD ls -lat;sudo npm run pm_start;sudo npm run test;
+CMD google-chrome --version;ls -lat;sudo npm run pm_start;sudo npm run test;
 
 
