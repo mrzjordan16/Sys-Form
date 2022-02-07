@@ -2,16 +2,20 @@ version: '3'
 services:
   node:
     build: ./TestDock/NodeApp/
+    depends_on:
+      - "chrome"	    
     volumes:
       - .:/app
+    depends
     ports:
-      - '3000:3000'
+      - 3000:3000
   chrome:
-    image: 'selenium/node-chrome:latest'
-    shm_size: 2gb
+    image: selenium/standalone-chrome
     ports:
-      - '4444:4444'
+      - 4444:4444
   test:
     build: ./TestDock/TestApp/
+    depends_on:
+      - "node"
     volumes:
       - .:/app

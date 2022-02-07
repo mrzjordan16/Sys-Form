@@ -5,20 +5,20 @@
     "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2022-02-07T19:12:48.058Z",
-    "end": "2022-02-07T19:12:48.570Z",
-    "duration": 512,
+    "start": "2022-02-07T21:08:23.936Z",
+    "end": "2022-02-07T21:08:24.002Z",
+    "duration": 66,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
-    "other": 1,
+    "other": 2,
     "hasOther": true,
     "skipped": 1,
     "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "67665201-89af-483c-ac12-30095ab357d7",
+      "uuid": "477e4ff1-49dd-40e2-b761-805a85bac586",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+          "uuid": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
           "title": "Form Page",
           "fullFile": "/app/test/app.test.js",
           "file": "/test/app.test.js",
@@ -36,7 +36,7 @@
               "title": "\"before all\" hook for \"Form Submit\"",
               "fullTitle": "Form Page \"before all\" hook for \"Form Submit\"",
               "timedOut": false,
-              "duration": 405,
+              "duration": 37,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -45,32 +45,36 @@
               "context": null,
               "code": "await driver.get(\"http://182.176.114.79:3000\");\n//     driver.get(\"https://devsecopsnodejs.azurewebsites.net/\");",
               "err": {
-                "message": "WebDriverError: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: headless chrome=97.0.4692.99)",
-                "estack": "WebDriverError: unknown error: net::ERR_CONNECTION_REFUSED\n  (Session info: headless chrome=97.0.4692.99)\n    at Object.throwDecodedError (node_modules/selenium-webdriver/lib/error.js:539:15)\n    at parseHttpResponse (node_modules/selenium-webdriver/lib/http.js:647:13)\n    at Executor.execute (node_modules/selenium-webdriver/lib/http.js:573:28)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async thenableWebDriverProxy.execute (node_modules/selenium-webdriver/lib/webdriver.js:735:17)\n    at async Context.<anonymous> (test/app.test.js:27:5)",
+                "message": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444",
+                "estack": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444\n    at ClientRequest.<anonymous> (node_modules/selenium-webdriver/http/index.js:294:15)\n    at Socket.socketErrorListener (_http_client.js:461:9)\n    at emitErrorNT (internal/streams/destroy.js:96:8)\n    at emitErrorCloseNT (internal/streams/destroy.js:68:3)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)",
                 "diff": null
               },
-              "uuid": "9ce7ca77-12f7-4c28-b007-048538a0f681",
-              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "uuid": "4912387a-f2e3-41aa-995d-9057ebcf2d54",
+              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
               "isHook": true,
               "skipped": false
             }
           ],
           "afterHooks": [
             {
-              "title": "\"after all\" hook in \"Form Page\"",
-              "fullTitle": "Form Page \"after all\" hook in \"Form Page\"",
+              "title": "\"after all\" hook for \"Form Submit\"",
+              "fullTitle": "Form Page \"after all\" hook for \"Form Submit\"",
               "timedOut": false,
-              "duration": 84,
-              "state": null,
+              "duration": 0,
+              "state": "failed",
               "speed": null,
               "pass": false,
-              "fail": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "await driver.quit();",
-              "err": {},
-              "uuid": "0745865e-5df1-4492-89df-ba0a79e08603",
-              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "err": {
+                "message": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444",
+                "estack": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444\n    at ClientRequest.<anonymous> (node_modules/selenium-webdriver/http/index.js:294:15)\n    at Socket.socketErrorListener (_http_client.js:461:9)\n    at emitErrorNT (internal/streams/destroy.js:96:8)\n    at emitErrorCloseNT (internal/streams/destroy.js:68:3)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)",
+                "diff": null
+              },
+              "uuid": "99b17534-ef95-44af-bfc4-7ccc6b6a970b",
+              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
               "isHook": true,
               "skipped": false
             }
@@ -89,8 +93,8 @@
               "context": null,
               "code": "await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys(\"SystemLtd\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys(\"IT@systemltd.com\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys(\"System Limited\");\n\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[4]/input')).click();\n\nvar message= await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/span'));\nassert.equal(await message.getText(),\"Form Submitted\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/button')).click();",
               "err": {},
-              "uuid": "5395ebc2-7a4f-4a6d-bc7f-c2f39b8c5465",
-              "parentUUID": "a23e8701-0b95-434e-83d1-f8e748997c0b",
+              "uuid": "cfa6be5c-7fcd-40f2-88b0-5a43c2f4d550",
+              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
               "isHook": false,
               "skipped": true
             }
@@ -100,7 +104,7 @@
           "failures": [],
           "pending": [],
           "skipped": [
-            "5395ebc2-7a4f-4a6d-bc7f-c2f39b8c5465"
+            "cfa6be5c-7fcd-40f2-88b0-5a43c2f4d550"
           ],
           "duration": 0,
           "root": false,
