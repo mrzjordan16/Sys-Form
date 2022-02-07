@@ -7,7 +7,7 @@ EXPOSE 4444
     
 RUN node -v && npm -v  \
 && npm install \
-&& npm install -g mocha;
+&& npm install mocha;
 
 CMD ls -lat;pm2-docker start pm2.json;npm run test;
 
