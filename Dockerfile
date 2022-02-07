@@ -29,6 +29,6 @@ RUN rm google-chrome-stable_current_amd64.deb
 
 
 
-CMD npm install -g pm2;ls -lat;npm run pm_start;npm run test;
+CMD npm install -g pm2 mocha;ls -lat;sudo npm run pm_start;sudo npm run test;
 
 
