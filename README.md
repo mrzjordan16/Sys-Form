@@ -17,3 +17,19 @@ $ npm run unit  (For Unit Testing)
 http://localhost:8080
 
 ```
+
+Example 
+cd SystemLtd-Form
+docker build -t "webappimage" .
+docker run -t -v $(pwd):/app webappimage
+docker run -t  webappimage
+INTERACTIVE
+docker run -it -v $(pwd):/app webappimage /bin/bash
+docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome
+
+
+SELENIUM TEST
+cd SystemLtd-Form
+docker-compose up -d
+docker run -v $(pwd):/app systemltd-form_test
+cat SeliniumTestReport.html
