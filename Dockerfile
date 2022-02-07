@@ -11,6 +11,6 @@ RUN  apt-get update && apt-get install -y sudo && sudo apt-get install curl wget
 && sudo npm install -g pm2 mocha;
 
 
-CMD ls -lat;sudo npm run pm_start_no_daemon;sudo npm run test;
+CMD ls -lat;sudo npm run pm_start;sudo npm run test;
 
 
