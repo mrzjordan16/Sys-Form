@@ -19,7 +19,7 @@ RUN rm google-chrome-stable_current_amd64.deb
 
 
 RUN npm install -g pm2 mocha;
-RUN npm -i chromedriver;
+RUN npm install chromedriver;
 
 
 #NODEJS
