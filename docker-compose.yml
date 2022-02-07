@@ -3,19 +3,18 @@ services:
   node:
     build: ./TestDock/NodeApp/
     depends_on:
-      - "chrome"	    
+      - chrome
     volumes:
-      - .:/app
-    depends
+      - '.:/app'
     ports:
-      - 3000:3000
+      - '3000:3000'
   chrome:
     image: selenium/standalone-chrome
     ports:
-      - 4444:4444
+      - '4444:4444'
   test:
     build: ./TestDock/TestApp/
     depends_on:
-      - "node"
+      - node
     volumes:
-      - .:/app
+      - '.:/app'
