@@ -1,5 +1,8 @@
 FROM ubuntu:latest
+
+COPY . ./app
 WORKDIR /app
+
 EXPOSE 3000 
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -15,7 +18,7 @@ RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 RUN rm google-chrome-stable_current_amd64.deb 
 
 
-
+RUN npm install -g pm2 mocha;
 
 
 
@@ -29,6 +32,6 @@ RUN rm google-chrome-stable_current_amd64.deb
 
 
 
-CMD npm install pm2 mocha;ls -lat;sudo npm run pm_start;sudo npm run test;
+CMD ls -lat;sudo npm run pm_start;sudo npm run test;
 
 
