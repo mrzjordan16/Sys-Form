@@ -1,6 +1,6 @@
 FROM keymetrics/pm2:latest-alpine
 COPY . .
-WORKDIR /app
+WORKDIR /
 
 EXPOSE 3000
 EXPOSE 4444
