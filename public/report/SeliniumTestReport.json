@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 0,
-    "passes": 0,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-02-07T21:08:23.936Z",
-    "end": "2022-02-07T21:08:24.002Z",
-    "duration": 66,
+    "start": "2022-02-08T00:09:41.348Z",
+    "end": "2022-02-08T00:09:46.086Z",
+    "duration": 4738,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
-    "other": 2,
-    "hasOther": true,
-    "skipped": 1,
-    "hasSkipped": true
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
   },
   "results": [
     {
-      "uuid": "477e4ff1-49dd-40e2-b761-805a85bac586",
+      "uuid": "3f789277-6c61-4675-9ccc-02f98190f4b2",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,54 +27,46 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
+          "uuid": "fb10c62e-133c-4562-8d3b-c9a93ae0dd9b",
           "title": "Form Page",
-          "fullFile": "/app/test/app.test.js",
+          "fullFile": "/home/mrzjordan/SystemLtd-Form/test/app.test.js",
           "file": "/test/app.test.js",
           "beforeHooks": [
             {
-              "title": "\"before all\" hook for \"Form Submit\"",
-              "fullTitle": "Form Page \"before all\" hook for \"Form Submit\"",
+              "title": "\"before all\" hook in \"Form Page\"",
+              "fullTitle": "Form Page \"before all\" hook in \"Form Page\"",
               "timedOut": false,
-              "duration": 37,
-              "state": "failed",
+              "duration": 3390,
+              "state": null,
               "speed": null,
               "pass": false,
-              "fail": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "await driver.get(\"http://182.176.114.79:3000\");\n//     driver.get(\"https://devsecopsnodejs.azurewebsites.net/\");",
-              "err": {
-                "message": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444",
-                "estack": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444\n    at ClientRequest.<anonymous> (node_modules/selenium-webdriver/http/index.js:294:15)\n    at Socket.socketErrorListener (_http_client.js:461:9)\n    at emitErrorNT (internal/streams/destroy.js:96:8)\n    at emitErrorCloseNT (internal/streams/destroy.js:68:3)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)",
-                "diff": null
-              },
-              "uuid": "4912387a-f2e3-41aa-995d-9057ebcf2d54",
-              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
+              "err": {},
+              "uuid": "57df4a95-85cd-4786-8212-b0eac2f316fe",
+              "parentUUID": "fb10c62e-133c-4562-8d3b-c9a93ae0dd9b",
               "isHook": true,
               "skipped": false
             }
           ],
           "afterHooks": [
             {
-              "title": "\"after all\" hook for \"Form Submit\"",
-              "fullTitle": "Form Page \"after all\" hook for \"Form Submit\"",
+              "title": "\"after all\" hook in \"Form Page\"",
+              "fullTitle": "Form Page \"after all\" hook in \"Form Page\"",
               "timedOut": false,
-              "duration": 0,
-              "state": "failed",
+              "duration": 108,
+              "state": null,
               "speed": null,
               "pass": false,
-              "fail": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "await driver.quit();",
-              "err": {
-                "message": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444",
-                "estack": "Error: ECONNREFUSED connect ECONNREFUSED 182.176.114.79:4444\n    at ClientRequest.<anonymous> (node_modules/selenium-webdriver/http/index.js:294:15)\n    at Socket.socketErrorListener (_http_client.js:461:9)\n    at emitErrorNT (internal/streams/destroy.js:96:8)\n    at emitErrorCloseNT (internal/streams/destroy.js:68:3)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)",
-                "diff": null
-              },
-              "uuid": "99b17534-ef95-44af-bfc4-7ccc6b6a970b",
-              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
+              "err": {},
+              "uuid": "aef296f0-4cea-45a7-9f1d-dc7a91c3d0e9",
+              "parentUUID": "fb10c62e-133c-4562-8d3b-c9a93ae0dd9b",
               "isHook": true,
               "skipped": false
             }
@@ -84,29 +76,29 @@
               "title": "Form Submit",
               "fullTitle": "Form Page Form Submit",
               "timedOut": false,
-              "duration": 0,
-              "state": null,
-              "speed": null,
-              "pass": false,
+              "duration": 1221,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/div/input')).sendKeys(\"SystemLtd\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[2]/div/input')).sendKeys(\"IT@systemltd.com\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[3]/div/textarea')).sendKeys(\"System Limited\");\n\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[4]/input')).click();\n\nvar message= await driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/span'));\nassert.equal(await message.getText(),\"Form Submitted\");\nawait driver.findElement(webdriver.By.xpath('/html/body/div/div/div[1]/form/div[1]/button')).click();",
               "err": {},
-              "uuid": "cfa6be5c-7fcd-40f2-88b0-5a43c2f4d550",
-              "parentUUID": "70b454df-30f4-42c0-b9b8-ac5d8c6c15ed",
+              "uuid": "0b7b143f-770f-40fd-a035-c22ec26f5dde",
+              "parentUUID": "fb10c62e-133c-4562-8d3b-c9a93ae0dd9b",
               "isHook": false,
-              "skipped": true
+              "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
+          "passes": [
+            "0b7b143f-770f-40fd-a035-c22ec26f5dde"
+          ],
           "failures": [],
           "pending": [],
-          "skipped": [
-            "cfa6be5c-7fcd-40f2-88b0-5a43c2f4d550"
-          ],
-          "duration": 0,
+          "skipped": [],
+          "duration": 1221,
           "root": false,
           "rootEmpty": false,
           "_timeout": 0
@@ -124,7 +116,7 @@
   ],
   "meta": {
     "mocha": {
-      "version": "9.2.0"
+      "version": "9.1.3"
     },
     "mochawesome": {
       "options": {
