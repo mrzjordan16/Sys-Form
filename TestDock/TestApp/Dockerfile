@@ -5,9 +5,8 @@ WORKDIR /app
 EXPOSE 3000
 EXPOSE 4444
     
-RUN node -v && npm -v  \
-&& npm install -g mocha;
+RUN node -v && npm -v;
 
-CMD ls -lat;npm run test;
+CMD ls -lat;npm install -g mocha;npm run test;
 
 
