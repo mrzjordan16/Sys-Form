@@ -5,4 +5,4 @@ EXPOSE 3000
 EXPOSE 4444
     
 
-CMD npm install mocha;ls -lat;npm run test;
+CMD rm -rf node_modules;npm install;ls -lat;npm run test;
