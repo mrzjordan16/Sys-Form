@@ -42,7 +42,7 @@ pipeline {
     stage ("Selenium-Test-With-Docker"){
             steps{
                 sshagent(['7d94bfc0-245f-4637-a3da-dbae19921747']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l mrzjordan 182.176.114.79 " cd ~/SystemLtd-Form;docker-compose restart;docker run -v $(pwd):/app systemltd-form_test;"'
+                    sh 'ssh -o StrictHostKeyChecking=no -l mrzjordan 182.176.114.79 " pwd;docker-compose restart;docker run -v /home/mrzjordan/SystemLtd-Form:/app systemltd-form_test;"'
                     sh 'ssh -o StrictHostKeyChecking=no -l mrzjordan 182.176.114.79 " cd ~/SystemLtd-Form;cat SeliniumTestReport.html">SeliniumTestReport1.html'
                 }            
             }
