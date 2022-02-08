@@ -1,3 +1,4 @@
+#TEST APP
 FROM keymetrics/pm2:latest-alpine
 COPY . /app
 WORKDIR /app
