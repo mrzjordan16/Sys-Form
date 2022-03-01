@@ -5,19 +5,19 @@ phases:
        runtime-versions:
          nodejs : 16.13.2
        
-    pre-build:
+    pre_build:
        commands:
          - npm --version
     build:
         commands:
          - npm install
-    post-build:
+    post_build:
         commands:
          - npm run unit
          - rm -rf node_modules
          - zip -r build.zip .
 reports:
-    unit-test:
+    unit_test:
      files:
       - UnitTestReport.json
 artifacts:
