@@ -20,7 +20,7 @@ phases:
 reports:
     unit_test:
      files:
-      - UnitTestReport.json
+      - UnitTestReport.html
 artifacts:
     files:
       - build.zip
