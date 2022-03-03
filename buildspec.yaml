@@ -15,7 +15,7 @@ phases:
         commands:
          - npm run unit
          - rm -rf node_modules
-         - zip -r build.zip .
+         - zip -r buildOutput.zip .
          - ls -lat
 #reports:
 #    unit_test:
