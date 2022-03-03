@@ -16,10 +16,11 @@ phases:
          - npm run unit
          - rm -rf node_modules
          - zip -r build.zip .
-reports:
-    unit_test:
-     files:
-      - UnitTestReport.json
+         - ls -lat
+#reports:
+#    unit_test:
+#     files:
+#      - UnitTestReport.html
 artifacts:
     files:
       - build.zip
