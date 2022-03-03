@@ -1,2 +1,3 @@
 #!/bin/bash
-npm run start
+cd buildOutput
+npm run pm_start
