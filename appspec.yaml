@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: ~\nodejs
+file_exists_behavior: OVERWRITE
+hooks:
+  BeforeInstall:
+   - location: scripts/build.sh
+     timeout: 300
+     runas: root
+  ApplicationStart:
+   - location: scripts/start.sh
+     timeout: 300
+     runas: root
+   
