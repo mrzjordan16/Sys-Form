@@ -24,7 +24,7 @@ phases:
 artifacts:
     files:
       - build.zip
-      - appspec.yaml
+      - appspec.yml
       - scripts/*.sh
     
     
