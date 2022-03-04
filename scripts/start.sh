@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /home/ubuntu/nodejs/
 sudo npm run pm_start
-ls -lat
+ls /home/ubuntu/nodejs/ -lat
