@@ -6,15 +6,15 @@ files:
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
-   - location: scripts/stop.sh
+   - location: stop.sh
      timeout: 300
      runas: ubuntu
   BeforeInstall:
-   - location: scripts/build.sh
+   - location: build.sh
      timeout: 300
      runas: ubuntu
   ApplicationStart:
-   - location: scripts/start.sh
+   - location: start.sh
      timeout: 300
      runas: ubuntu
    
