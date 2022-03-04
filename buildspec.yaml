@@ -24,5 +24,8 @@ phases:
 artifacts:
     files:
       - build.zip
+      - appspec.yml
+      - script/*.sh
+    discard-paths: yes
     
     
