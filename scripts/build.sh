@@ -1,6 +1,6 @@
 #!/bin/bash
-#unzip buildOutput.zip
-#cd buildOutput
+unzip build.zip
+cd build
 #npm install pm2 -g
 #npm install  --production
 ls -lat

@@ -1,4 +1,4 @@
 #!/bin/bash
-#cd buildOutput
+cd build
 #npm run pm_stop
 ls -lat
