@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo rm -rf /home/ubuntu/nodejs
-cd /home/ubuntu/
-mkdir nodejs
+mkdir /home/ubuntu/nodejs
+cp build.zip /home/ubuntu/nodejs/build.zip
 cd /home/ubuntu/nodejs/
 sudo unzip build.zip
 sudo npm install pm2 -g
