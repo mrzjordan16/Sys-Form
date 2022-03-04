@@ -23,8 +23,6 @@ phases:
 #      - UnitTestReport.html
 artifacts:
     files:
-      - build.zip
-      - appspec.yml
-      - scripts/*.sh
+      - '**/*'
     
     
