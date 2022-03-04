@@ -2,7 +2,7 @@
   "name": "nodeApp",
   "script": "app.js",
   "instances": "2",
-  "env_production" : {
+  "env" : {
     "NODE_ENV": "production"
   }
 }
