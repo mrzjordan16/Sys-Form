@@ -11,7 +11,7 @@ hooks:
      runas: ubuntu
   BeforeInstall:
    - location: install_dependencies.sh
-     timeout:300
+     timeout: 300
      runas: ubuntu
   Install:
    - location: build.sh
