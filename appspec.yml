@@ -9,7 +9,7 @@ hooks:
    - location: install_dependencies.sh
      timeout: 300
      runas: ubuntu
-  Install:
+  AfterInstall:
    - location: build.sh
      timeout: 300
      runas: ubuntu
