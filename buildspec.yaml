@@ -23,6 +23,6 @@ phases:
 #      - UnitTestReport.html
 artifacts:
     files:
-      - '**/*'
+      - build.zip
     
     
