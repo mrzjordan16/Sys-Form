@@ -15,7 +15,7 @@ phases:
         commands:
          - npm run unit
          - rm -rf node_modules
-         - zip -r buildOutput.zip .
+         - zip -r build.zip .
          - ls -lat
 #reports:
 #    unit_test:
@@ -23,7 +23,7 @@ phases:
 #      - UnitTestReport.html
 artifacts:
     files:
-      - buildOutput.zip
+      - build.zip
       - appspec.yml
       - scripts/*.sh
     
