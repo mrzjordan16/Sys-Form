@@ -1,4 +1,4 @@
-version: 0.2
+	version: 0.2
 
 phases:
     install:
@@ -25,7 +25,6 @@ artifacts:
     files:
       - build.zip
       - appspec.yml
-      - scripts/*.sh
     discard-paths: yes
     
     
