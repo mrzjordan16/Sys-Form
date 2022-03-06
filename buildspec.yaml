@@ -25,6 +25,7 @@ artifacts:
     files:
       - build.zip
       - appspec.yml
+      - scripts/*.sh
     discard-paths: yes
     
     
