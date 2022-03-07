@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: ./build.zip
-    destination: /home/ubuntu/nodejs/
+    destination: /home/nodejs/
     
 file_exists_behavior: OVERWRITE
 hooks:
