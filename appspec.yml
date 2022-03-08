@@ -2,24 +2,24 @@ version: 0.0
 os: linux
 files:
   - source: ./build.zip
-    destination: /home/nodejs/
+    destination: /home/mrzjordan/nodejs
     
 file_exists_behavior: OVERWRITE
 hooks:
   AppicationStop:
    - location: stop.sh
      timeout: 300
-     runas: ubuntu
+     runas: mrzjordan
   BeforeInstall:
    - location: install_dependencies.sh
      timeout: 300
-     runas: ubuntu
+     runas: mrzjordan
   AfterInstall:
    - location: build.sh
      timeout: 300
-     runas: ubuntu
+     runas: mrzjordan
   ApplicationStart:
    - location: start.sh
      timeout: 300
-     runas: ubuntu
+     runas: mrzjordan
    
