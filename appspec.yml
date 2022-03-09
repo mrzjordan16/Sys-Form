@@ -2,24 +2,24 @@ version: 0.0
 os: linux
 files:
   - source: ./build.zip
-    destination: /home/systemltd/nodejs
+    destination: /home/ubuntu/nodejs
     
 file_exists_behavior: OVERWRITE
 hooks:
   AppicationStop:
    - location: stop.sh
      timeout: 300
-     runas: systemsltd
+     runas: ubuntu
   BeforeInstall:
    - location: install_dependencies.sh
      timeout: 300
-     runas: systemsltd
+     runas: ubuntu
   AfterInstall:
    - location: build.sh
      timeout: 300
-     runas: systemsltd
+     runas: ubuntu
   ApplicationStart:
    - location: start.sh
      timeout: 300
-     runas: systemsltd
+     runas: ubuntu
    
